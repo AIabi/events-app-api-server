@@ -162,18 +162,7 @@ describe('Test routes', () => {
                 })
         });
 
-        it('should get event by id', (done) => {
-            chai.request(server)
-                .get(`/api/event/${eventId}`)
-                .send()
-                .end((err, res) => {
-                    res.should.have.status((200));
-                    res.body.should.be.a('object');
-                    res.body.event.should.a('object');
-                    res.body.event.id.should.be.eql(eventId);
-                    done();
-                })
-        });
+       
 
         after(function () {
             testEvents.forEach(event => {
